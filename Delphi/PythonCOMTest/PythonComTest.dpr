@@ -18,7 +18,7 @@ begin
     try
       ComObj := CreateOleObject('Python.MyCOMObject');
       PersonObj := ComObj.get_person();
-      PersonStr := Format('%s (%d years old)', [PersonObj.name, PersonObj.age]);
+      PersonStr := Format('%s (%d years old)', [PersonObj.name, Integer(PersonObj.age)]);
       WriteLn(PersonStr);
 
       WriteLn('Press Enter to exit...');
