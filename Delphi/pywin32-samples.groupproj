@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F8D9D8A6-798A-4F4E-A40A-4A63FE542AF1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PythonCOMTest\PythonComTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PythonComTest">
+        <MSBuild Projects="PythonCOMTest\PythonComTest.dproj"/>
+    </Target>
+    <Target Name="PythonComTest:Clean">
+        <MSBuild Projects="PythonCOMTest\PythonComTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PythonComTest:Make">
+        <MSBuild Projects="PythonCOMTest\PythonComTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PythonComTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PythonComTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PythonComTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
