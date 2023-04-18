@@ -8,3 +8,8 @@ Android
 
 /__pycache__
 .vs/
+Debug
+Release
+x64
+*.vcxproj.user
+*.vcxproj.filters
